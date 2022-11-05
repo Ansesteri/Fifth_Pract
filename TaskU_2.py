@@ -2,7 +2,6 @@ class Pet:
     """V-Pet"""
     def __init__(self):
         print('An animal was born')
-    
     def talk(self):
         print("Hi, I am an animal!")
 
