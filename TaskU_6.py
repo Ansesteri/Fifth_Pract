@@ -62,17 +62,31 @@ class Pet:
         return m
 
 def main():
-    print('Access to attribute of class Pet.total:', end = " ")
-    print(Pet.total)
-
-    print("Creating animals.")
-    pet1 = Pet("Animal 1")
-    pet2 = Pet("Animal 2")
-    pet3 = Pet("Animal 3")
-
-    Pet.status()
-
-    print("Access to attribute of class through odject:", end = " ")
-    print(pet1.mood)    
+    pet_name = input("How will you call your animal?: ")
+    pet = Pet(pet_name)
+    
+    choice = None
+    while choice != "0":
+        print \
+        ("""
+        My animal
+        
+        0 - Exit
+        1 - Discover mood of your animal
+        2 - Feed animal
+        3 - Play with animal
+        """)
+        choice = input("Your choice: ")
+        print()
+        if choice == '0':
+            print("Goodbye.")
+        elif choice == '1':
+            pet.talk()
+        elif choice == '2':
+            pet.eat()
+        elif choice == '3':
+            pet.play()
+        else:
+            print("Sorry, but we don`t have this option", choice)
 
 main()
